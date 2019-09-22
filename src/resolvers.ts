@@ -1,17 +1,15 @@
-const users = [
-  { name: 'Ms. Madelyn Bailey' },
-  { name: 'Cyrus Keeling PhD' },
-  { name: "Fern O'Kon" },
-  { name: 'Ezekiel Corkery' },
-  { name: 'Ofelia Nicolas' },
-  { name: 'Jaida Mante Sr.' },
-  { name: 'Aracely Yost' },
-  { name: 'Dr. Orrin Wolf' },
-  { name: 'Robbie Bartoletti' },
-];
+import { IResolvers } from 'graphql-tools';
+import { DataSources } from './data-sources';
 
-export default {
+const resolvers: IResolvers = {
   Query: {
-    users: () => users,
+    users: (_root: {}, _args: {}, { dataSources }: { dataSources: DataSources }) => {
+      return dataSources.users.getUsers();
+    },
+    user: (_root: {}, { id }: { id: number }, { dataSources }: { dataSources: DataSources }) => {
+      return dataSources.users.getUser(id);
+    },
   },
 };
+
+export default resolvers;
