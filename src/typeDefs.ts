@@ -34,4 +34,8 @@ export default gql`
   type Mutation {
     createQuote(input: QuoteInput): QuotePost!
   }
+
+  type Subscription {
+    quoteAdded: QuotePost!
+  }
 `;

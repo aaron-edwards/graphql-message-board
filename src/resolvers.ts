@@ -1,6 +1,11 @@
 import { IResolvers } from 'graphql-tools';
+import { PubSub } from 'apollo-server';
 import { DataSources } from './data-sources';
 import { Quote, QuoteCategory } from './data-sources/QuoteDataSource';
+
+const pubsub = new PubSub();
+
+const QUOTES = 'QUOTES';
 
 const resolvers: IResolvers = {
   Query: {
@@ -19,12 +24,20 @@ const resolvers: IResolvers = {
       { dataSources: { quotes, users } }: { dataSources: DataSources },
     ) => {
       const user = users.getByUserName(username) || users.createUser(username);
-      return quotes.create(text, category, user.id);
+      const newQuote = quotes.create(text, category, user.id);
+      pubsub.publish(QUOTES, { quoteAdded: newQuote });
+      return newQuote;
     },
   },
   QuotePost: {
-    submittedBy: (quote: Quote, _args, { dataSources: { users } }: { dataSources: DataSources }) => {
-      return users.getUser(quote.userId);
+    submittedBy: (quote: Quote, _args, { dataSources }: { dataSources: DataSources }) => {
+      return dataSources.users.getUser(quote.userId);
+    },
+  },
+
+  Subscription: {
+    quoteAdded: {
+      subscribe: () => pubsub.asyncIterator([QUOTES]),
     },
   },
 };

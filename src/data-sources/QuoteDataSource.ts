@@ -14,11 +14,6 @@ export type Quote = {
 let quoteData = quotes;
 
 export default class QuoteDataSource extends DataSource {
-  constructor() {
-    super();
-    quoteData = quoteData as Quote[];
-  }
-
   allQuotes() {
     return quoteData;
   }

@@ -2,12 +2,25 @@ import { ApolloServer } from 'apollo-server';
 import resolvers from './resolvers';
 import typeDefs from './typeDefs';
 import dataSources from './data-sources';
+import UserDataSource from './data-sources/UserDataSource';
 
 const port = process.env.PORT || 4000;
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources,
+  context: ({ connection }) => {
+    if (connection) {
+      console.log(connection);
+      return {
+        dataSources: {
+          users: new UserDataSource(),
+        },
+      };
+    }
+    return {};
+  },
   introspection: true,
   playground: true,
 });
