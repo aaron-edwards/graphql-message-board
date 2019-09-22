@@ -1,34 +1,8 @@
-import { ApolloServer, gql } from 'apollo-server';
+import { ApolloServer } from 'apollo-server';
+import resolvers from './resolvers';
+import typeDefs from './typeDefs';
 
-const typeDefs = gql`
-  type User {
-    name: String!
-  }
-
-  type Query {
-    users: [User!]!
-  }
-`;
-const users = [
-  { name: 'Ms. Madelyn Bailey' },
-  { name: 'Cyrus Keeling PhD' },
-  { name: "Fern O'Kon" },
-  { name: 'Ezekiel Corkery' },
-  { name: 'Ofelia Nicolas' },
-  { name: 'Jaida Mante Sr.' },
-  { name: 'Aracely Yost' },
-  { name: 'Dr. Orrin Wolf' },
-  { name: 'Robbie Bartoletti' },
-  { name: 'Rupert Terry' },
-];
-
-const resolvers = {
-  Query: {
-    users: () => users,
-  },
-};
-
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -37,5 +11,6 @@ const server = new ApolloServer({
 });
 
 server.listen({ port }).then(({ url }) => {
+  // eslint-disable-next-line no-console
   console.log(`🚀  Server ready at ${url}`);
 });
