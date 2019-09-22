@@ -1,5 +1,5 @@
 import { DataSource } from 'apollo-datasource';
-import quoteData from './quotes.json';
+import quotes from './quotes.json';
 
 export type QuoteCategory = 'HarryPotter' | 'Shakespeare' | 'Simpsons' | 'Yoda' | 'Lunch';
 
@@ -11,19 +11,31 @@ export type Quote = {
   timestamp: string;
 };
 
-export default class QuoteDataSource extends DataSource {
-  private quoteData: Quote[];
+let quoteData = quotes;
 
+export default class QuoteDataSource extends DataSource {
   constructor() {
     super();
-    this.quoteData = quoteData as Quote[];
+    quoteData = quoteData as Quote[];
   }
 
   allQuotes() {
-    return this.quoteData;
+    return quoteData;
   }
 
   quotesByCategory(category: QuoteCategory) {
     return this.allQuotes().filter(quote => quote.category === category);
+  }
+
+  create(text: string, category: QuoteCategory, userId: number) {
+    const newQuote = {
+      id: quoteData.length,
+      text,
+      userId,
+      category,
+      timestamp: new Date().toISOString(),
+    };
+    quoteData = [newQuote, ...quoteData];
+    return newQuote;
   }
 }

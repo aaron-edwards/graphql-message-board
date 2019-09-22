@@ -26,4 +26,12 @@ export default gql`
   type Query {
     quotes(category: Category): [QuotePost!]!
   }
+  input QuoteInput {
+    category: Category!
+    text: String!
+    username: String!
+  }
+  type Mutation {
+    createQuote(input: QuoteInput): QuotePost!
+  }
 `;

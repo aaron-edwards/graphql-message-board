@@ -12,6 +12,16 @@ const resolvers: IResolvers = {
       return category ? quotes.quotesByCategory(category) : quotes.allQuotes();
     },
   },
+  Mutation: {
+    createQuote: (
+      _root: {},
+      { input: { text, username, category } }: { input: { category: QuoteCategory; text: string; username: string } },
+      { dataSources: { quotes, users } }: { dataSources: DataSources },
+    ) => {
+      const user = users.getByUserName(username) || users.createUser(username);
+      return quotes.create(text, category, user.id);
+    },
+  },
   QuotePost: {
     submittedBy: (quote: Quote, _args, { dataSources: { users } }: { dataSources: DataSources }) => {
       return users.getUser(quote.userId);
