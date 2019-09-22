@@ -1,0 +1,142 @@
+[
+  {
+    "id": 9,
+    "text": "It takes two to lie: one to lie and one to listen.",
+    "userId": 3,
+    "category": "Simpsons",
+    "timestamp": "2019-09-21T19:41:22.746Z"
+  },
+  {
+    "id": 15,
+    "text": "At an end your rule is, and not short enough it was!",
+    "userId": 4,
+    "category": "Yoda",
+    "timestamp": "2019-09-21T14:50:44.174Z"
+  },
+  {
+    "id": 13,
+    "text": "Already know you that which you need.",
+    "userId": 5,
+    "category": "Yoda",
+    "timestamp": "2019-09-20T17:56:19.227Z"
+  },
+  {
+    "id": 0,
+    "text": "It does not do to dwell on dreams and forget to live.",
+    "userId": 3,
+    "category": "HarryPotter",
+    "timestamp": "2019-09-20T08:17:55.240Z"
+  },
+  {
+    "id": 10,
+    "text": "Life is just one crushing defeat after another until you just wish Flanders was dead.",
+    "userId": 4,
+    "category": "Simpsons",
+    "timestamp": "2019-09-20T07:17:43.501Z"
+  },
+  {
+    "id": 4,
+    "text": "Happiness can be found even in the darkest of times if only one remembers to turn on the light.",
+    "userId": 2,
+    "category": "HarryPotter",
+    "timestamp": "2019-09-20T07:15:43.383Z"
+  },
+  {
+    "id": 8,
+    "text": "Wisely and slow; they stumble that run fast.",
+    "userId": 4,
+    "category": "Shakespeare",
+    "timestamp": "2019-09-20T02:20:08.029Z"
+  },
+  {
+    "id": 14,
+    "text": "Adventure. Excitement. A Jedi craves not these things.",
+    "userId": 3,
+    "category": "Yoda",
+    "timestamp": "2019-09-20T01:42:56.850Z"
+  },
+  {
+    "id": 6,
+    "text": "Good Night, Good night! Parting is such sweet sorrow, that I shall say good night till it be morrow.",
+    "userId": 5,
+    "category": "Shakespeare",
+    "timestamp": "2019-09-18T20:51:47.395Z"
+  },
+  {
+    "id": 4,
+    "text": "O Romeo, Romeo! wherefore art thou Romeo?.",
+    "userId": 4,
+    "category": "Shakespeare",
+    "timestamp": "2019-09-18T01:03:08.071Z"
+  },
+  {
+    "id": 12,
+    "text": "If you pray to the wrong god, you might just make the right one madder and madder.",
+    "userId": 5,
+    "category": "Simpsons",
+    "timestamp": "2019-09-17T14:51:44.488Z"
+  },
+  {
+    "id": 7,
+    "text": "What's in a name? That which we call a rose by any other name would smell as sweet.",
+    "userId": 2,
+    "category": "Shakespeare",
+    "timestamp": "2019-09-17T11:49:31.261Z"
+  },
+  {
+    "id": 8,
+    "text": "Marriage is like a coffin and each kid is another nail.",
+    "userId": 5,
+    "category": "Simpsons",
+    "timestamp": "2019-09-17T03:47:26.467Z"
+  },
+  {
+    "id": 12,
+    "text": "Use your feelings, Obi-Wan, and find him you will.",
+    "userId": 4,
+    "category": "Yoda",
+    "timestamp": "2019-09-16T20:15:35.173Z"
+  },
+  {
+    "id": 3,
+    "text": "It is our choices, Harry, that show what we truly are, far more than our abilities.",
+    "userId": 5,
+    "category": "HarryPotter",
+    "timestamp": "2019-09-16T16:55:06.193Z"
+  },
+  {
+    "id": 11,
+    "text": "You tried your best and you failed miserably. The lesson is: Never try.",
+    "userId": 5,
+    "category": "Simpsons",
+    "timestamp": "2019-09-16T07:40:11.487Z"
+  },
+  {
+    "id": 16,
+    "text": "Around the survivors a perimeter create.",
+    "userId": 5,
+    "category": "Yoda",
+    "timestamp": "2019-09-16T04:46:20.019Z"
+  },
+  {
+    "id": 5,
+    "text": "It is the east, and Juliet is the sun.",
+    "userId": 2,
+    "category": "Shakespeare",
+    "timestamp": "2019-09-16T01:31:01.535Z"
+  },
+  {
+    "id": 1,
+    "text": "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.",
+    "userId": 4,
+    "category": "HarryPotter",
+    "timestamp": "2019-09-15T19:37:31.532Z"
+  },
+  {
+    "id": 2,
+    "text": "To the well-organized mind, death is but the next great adventure.",
+    "userId": 1,
+    "category": "HarryPotter",
+    "timestamp": "2019-09-15T18:14:11.498Z"
+  }
+]

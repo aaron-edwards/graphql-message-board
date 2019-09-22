@@ -16,6 +16,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.138",
     "apollo-datasource": "^0.6.3",
     "apollo-datasource-rest": "^0.6.4",
     "apollo-server": "^2.9.3",

@@ -1,19 +1,16 @@
 import { IResolvers } from 'graphql-tools';
 import { DataSources } from './data-sources';
-import { Post } from './data-sources/PostDataSource';
+import { Quote } from './data-sources/QuoteDataSource';
 
 const resolvers: IResolvers = {
   Query: {
-    posts: (_root: {}, _args: {}, { dataSources: { posts } }: { dataSources: DataSources }) => {
-      return posts.posts();
-    },
-    post: (_root: {}, { id }: { id: number }, { dataSources: { posts } }: { dataSources: DataSources }) => {
-      return posts.post(id);
+    quotes: (_root: {}, _args: {}, { dataSources: { quotes } }: { dataSources: DataSources }) => {
+      return quotes.quotes();
     },
   },
-  Post: {
-    user: (post: Post, _args, { dataSources: { users } }: { dataSources: DataSources }) => {
-      return users.getUser(post.userId);
+  QuotePost: {
+    submittedBy: (quote: Quote, _args, { dataSources: { users } }: { dataSources: DataSources }) => {
+      return users.getUser(quote.userId);
     },
   },
 };

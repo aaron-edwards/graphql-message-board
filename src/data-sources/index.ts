@@ -1,14 +1,14 @@
 import UserDataSource from './UserDataSource';
-import PostDataSource from './PostDataSource';
+import QuoteDataSource from './QuoteDataSource';
 
 const dataSources = () => ({
   users: new UserDataSource(),
-  posts: new PostDataSource(),
+  quotes: new QuoteDataSource(),
 });
 
 export type DataSources = {
   users: UserDataSource;
-  posts: PostDataSource;
+  quotes: QuoteDataSource;
 };
 
 export default dataSources;
