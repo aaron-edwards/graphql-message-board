@@ -1,6 +1,14 @@
 import { gql } from 'apollo-server';
 
 export default gql`
+  type Post {
+    id: Int!
+    title: String!
+    timestamp: String!
+    user: User
+    userId: Int!
+  }
+
   type User {
     id: Int!
     name: String
@@ -8,7 +16,7 @@ export default gql`
     email: String
   }
   type Query {
-    users: [User!]!
-    user(id: Int!): User
+    posts: [Post!]!
+    post(id: Int!): Post
   }
 `;
