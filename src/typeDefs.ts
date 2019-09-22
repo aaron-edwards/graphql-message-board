@@ -16,13 +16,6 @@ export default gql`
     submittedBy: User
     userId: Int!
   }
-  type Post {
-    id: Int!
-    title: String!
-    timestamp: String!
-    user: User
-    userId: Int!
-  }
 
   type User {
     id: Int!
@@ -31,8 +24,6 @@ export default gql`
     email: String
   }
   type Query {
-    quotes: [QuotePost!]!
-    posts: [Post!]!
-    post(id: Int!): Post
+    quotes(category: Category): [QuotePost!]!
   }
 `;

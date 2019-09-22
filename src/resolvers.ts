@@ -1,11 +1,15 @@
 import { IResolvers } from 'graphql-tools';
 import { DataSources } from './data-sources';
-import { Quote } from './data-sources/QuoteDataSource';
+import { Quote, QuoteCategory } from './data-sources/QuoteDataSource';
 
 const resolvers: IResolvers = {
   Query: {
-    quotes: (_root: {}, _args: {}, { dataSources: { quotes } }: { dataSources: DataSources }) => {
-      return quotes.quotes();
+    quotes: (
+      _root: {},
+      { category }: { category: QuoteCategory },
+      { dataSources: { quotes } }: { dataSources: DataSources },
+    ) => {
+      return category ? quotes.quotesByCategory(category) : quotes.allQuotes();
     },
   },
   QuotePost: {

@@ -1,7 +1,7 @@
 import { DataSource } from 'apollo-datasource';
 import quoteData from './quotes.json';
 
-type QuoteCategory = 'HarryPotter' | 'Shakespeare' | 'Simpsons' | 'Yoda' | 'Lunch';
+export type QuoteCategory = 'HarryPotter' | 'Shakespeare' | 'Simpsons' | 'Yoda' | 'Lunch';
 
 export type Quote = {
   id: number;
@@ -19,7 +19,11 @@ export default class QuoteDataSource extends DataSource {
     this.quoteData = quoteData as Quote[];
   }
 
-  quotes() {
+  allQuotes() {
     return this.quoteData;
+  }
+
+  quotesByCategory(category: QuoteCategory) {
+    return this.allQuotes().filter(quote => quote.category === category);
   }
 }
