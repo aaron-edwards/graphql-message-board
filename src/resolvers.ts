@@ -18,21 +18,22 @@ export default {
   Quote: {
     submittedBy: (quote: { userId: number }, _args: {}, { dataSources }: { dataSources: DataSources }) => {
       return dataSources.user.getUser(quote.userId);
-    }
+    },
   },
   Mutation: {
     createQuote: (
-      _root: {}, 
-      { input }: { input: { text: string, category: string, userId: number }}, 
-      { dataSources }: { dataSources: DataSources }) => {
-        const newQuote = dataSources.quote.create(input.text, input.category, input.userId);
-        pubsub.publish(QUOTE_ADDED, { quoteAdded: newQuote });
-        return newQuote;
-    }
+      _root: {},
+      { input }: { input: { text: string; category: string; userId: number } },
+      { dataSources }: { dataSources: DataSources },
+    ) => {
+      const newQuote = dataSources.quote.create(input.text, input.category, input.userId);
+      pubsub.publish(QUOTE_ADDED, { quoteAdded: newQuote });
+      return newQuote;
+    },
   },
-  Subscription: {    
+  Subscription: {
     quoteAdded: {
-      subscribe: () => pubsub.asyncIterator([QUOTE_ADDED])
-    },  
+      subscribe: () => pubsub.asyncIterator([QUOTE_ADDED]),
+    },
   },
 };
