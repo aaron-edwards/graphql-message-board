@@ -1,20 +1,6 @@
-import { ApolloServer, gql } from 'apollo-server';
-
-const typeDefs = gql`
-  type Quote {
-    text: String!
-  }
-
-  type Query {
-    quotes: [Quote!]!
-  }
-`;
-
-const resolvers = {
-  Query: {
-    quotes: () => [],
-  },
-};
+import { ApolloServer } from 'apollo-server';
+import typeDefs from './type-defs';
+import resolvers from './resolvers';
 
 const port = process.env.PORT || 4000;
 const server = new ApolloServer({
