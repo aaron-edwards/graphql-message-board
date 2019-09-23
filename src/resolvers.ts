@@ -9,4 +9,9 @@ export default {
       return dataSources.quote.getQuotes();
     },
   },
+  Quote: {
+    submittedBy: (quote: { id: String }, _args: {}) => {
+      return { id: quote.id, name: "???" };
+    }
+  }
 };

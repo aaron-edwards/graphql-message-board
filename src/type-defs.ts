@@ -11,8 +11,12 @@ export default gql`
   type Quote {
     id: Int!
     text: String!
-    userId: Int!
+    submittedBy: User!
     category: Category!
+  }
+  type User {
+    id: Int!
+    name: String!
   }
 
   type Query {
