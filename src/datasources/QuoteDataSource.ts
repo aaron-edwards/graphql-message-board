@@ -1,14 +1,8 @@
 import { DataSource } from 'apollo-datasource';
-
-const quote = {
-  id: 1,
-  text: 'Some Text',
-  userId: 1,
-  category: 'LL',
-};
+import quotes from './quotes.json';
 
 export default class QuoteDataSource extends DataSource {
   getQuotes() {
-    return [quote];
+    return quotes;
   }
 }
