@@ -10,8 +10,8 @@ export default {
     },
   },
   Quote: {
-    submittedBy: (quote: { userId: String }, _args: {}) => {
-      return { id: quote.userId, name: "???" };
+    submittedBy: (quote: { userId: number }, _args: {}, { dataSources }: { dataSources: DataSources }) => {
+      return dataSources.user.getUser(quote.userId);
     }
   }
 };

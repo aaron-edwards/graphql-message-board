@@ -1,4 +1,4 @@
-import { RESTDataSource } from 'apollo-datasource-rest';
+import { RESTDataSource, Response, Request } from 'apollo-datasource-rest';
 
 export default class UserDataSource extends RESTDataSource {
   constructor() {
@@ -8,4 +8,10 @@ export default class UserDataSource extends RESTDataSource {
   getUser(id: number) {
     return this.get(`/users/${id}`)
   }
+
+  protected async didReceiveResponse(response: Response, request: Request) {
+    console.log(`Response From ${response.url} ${response.status}`);
+    return super.didReceiveResponse(response, request);
+  }
+
 }
