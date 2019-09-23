@@ -5,14 +5,18 @@ import dataSources from './datasources';
 
 const port = process.env.PORT || 4000;
 
-const context = ({ req }: { req: any }) => {
-  const token = req.headers.authorization;
+const context = ({ req, connection }: { req: any, connection: any }) => {
+  if (connection) {
+    return {};
+  } else {
+    const token = req.headers.authorization;
 
-  if (token !== "Token") {
-    throw new AuthenticationError("Invalid Token Found");
+    if (token !== "Token") {
+      throw new AuthenticationError("Invalid Token Found");
+    }
+
+    return { token };
   }
-
-  return { token };
 }
 
 const server = new ApolloServer({

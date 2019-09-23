@@ -1,4 +1,10 @@
+import { PubSub } from 'apollo-server';
+
 import { DataSources } from './datasources';
+
+const QUOTE_ADDED = 'QUOTE_ADDED';
+
+const pubsub = new PubSub();
 
 export default {
   Query: {
@@ -19,7 +25,14 @@ export default {
       _root: {}, 
       { input }: { input: { text: string, category: string, userId: number }}, 
       { dataSources }: { dataSources: DataSources }) => {
-        return dataSources.quote.create(input.text, input.category, input.userId);
+        const newQuote = dataSources.quote.create(input.text, input.category, input.userId);
+        pubsub.publish(QUOTE_ADDED, { quoteAdded: newQuote });
+        return newQuote;
     }
-  }
+  },
+  Subscription: {    
+    quoteAdded: {
+      subscribe: () => pubsub.asyncIterator([QUOTE_ADDED])
+    },  
+  },
 };

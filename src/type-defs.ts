@@ -22,7 +22,7 @@ export default gql`
   type Query {
     quotes(category: Category): [Quote!]!
   }
-  
+
   input CreateQuoteInput {
     text: String!
     category: Category!
@@ -30,5 +30,8 @@ export default gql`
   }
   type Mutation {
     createQuote(input: CreateQuoteInput): Quote!
+  }
+  type Subscription {
+    quoteAdded: Quote!
   }
 `;
