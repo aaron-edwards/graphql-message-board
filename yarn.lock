@@ -144,11 +144,6 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/faker@^4.1.5":
-  version "4.1.5"
-  resolved "https://registry.yarnpkg.com/@types/faker/-/faker-4.1.5.tgz#8f620f9c9a67150aa0a32b4e8a407da43fca61d4"
-  integrity sha512-YSDqoBEWYGdNk53xSkkb6REaUaVSlIjxIAGjj/nbLzlZOit7kUU+nA2zC2qQkIVO4MQ+3zl4Sz7aw+kbpHHHUQ==
-
 "@types/fs-capacitor@*":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/fs-capacitor/-/fs-capacitor-2.0.0.tgz#17113e25817f584f58100fb7a08eed288b81956e"
@@ -199,6 +194,11 @@
     "@types/keygrip" "*"
     "@types/koa-compose" "*"
     "@types/node" "*"
+
+"@types/lodash@^4.14.138":
+  version "4.14.138"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.138.tgz#34f52640d7358230308344e579c15b378d91989e"
+  integrity sha512-A4uJgHz4hakwNBdHNPdxOTkYmXNgmUAKLbXZ7PKGslgeV0Mb8P3BlbYfPovExek1qnod4pDfRbxuzcVs3dlFLg==
 
 "@types/long@^4.0.0":
   version "4.0.0"
@@ -369,6 +369,17 @@ apollo-cache-control@^0.8.4:
   dependencies:
     apollo-server-env "^2.4.3"
     graphql-extensions "^0.10.3"
+
+apollo-datasource-rest@^0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-0.6.4.tgz#7d42d8b41e9e8d001ff4925df799c326f44eeb78"
+  integrity sha512-jPPnJd+ZtGTjIDd2LpBrny/CJgg6DyW6jPc5dESdIxA829pNYDjKHugA59G0ZlgnFGbwzjM2h2Vemo+HifnUYA==
+  dependencies:
+    apollo-datasource "^0.6.3"
+    apollo-server-caching "^0.5.0"
+    apollo-server-env "^2.4.3"
+    apollo-server-errors "^2.3.3"
+    http-cache-semantics "^4.0.0"
 
 apollo-datasource@^0.6.3:
   version "0.6.3"
@@ -1683,7 +1694,7 @@ graphql-tag@^2.9.2:
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
   integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==
 
-graphql-tools@^4.0.0:
+graphql-tools@^4.0.0, graphql-tools@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-4.0.5.tgz#d2b41ee0a330bfef833e5cdae7e1f0b0d86b1754"
   integrity sha512-kQCh3IZsMqquDx7zfIGWBau42xe46gmqabwYkpPlCLIjcEY1XK+auP7iGRD9/205BPyoQdY8hT96MPpgERdC9Q==
@@ -1768,6 +1779,11 @@ hosted-git-info@^2.1.4:
   version "2.8.4"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.4.tgz#44119abaf4bc64692a16ace34700fed9c03e2546"
   integrity sha512-pzXIvANXEFrc5oFFXRMkbLPQ2rXRoDERwDLyrcUxGhaZhgP54BBSl9Oheh7Vv0T090cszWBxPjkQQ5Sq1PbBRQ==
+
+http-cache-semantics@^4.0.0:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.0.3.tgz#495704773277eeef6e43f9ab2c2c7d259dda25c5"
+  integrity sha512-TcIMG3qeVLgDr1TEd2XvHaTnMPwYQUQMIBLy+5pLSDKYFc7UIqj39w8EGzZkaxoLv/l2K8HaI0t5AVA+YYgUew==
 
 http-errors@1.7.2:
   version "1.7.2"

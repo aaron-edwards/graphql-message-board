@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": "12.8.0"
+    "node": "^12.8.0"
   },
   "scripts": {
     "dev": "nodemon -e ts,json -w src --exec \"ts-node src/index.ts\"",

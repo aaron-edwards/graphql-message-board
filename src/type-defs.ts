@@ -16,6 +16,6 @@ export default gql`
   }
 
   type Query {
-    quotes: [Quote!]!
+    quotes(category: Category): [Quote!]!
   }
 `;

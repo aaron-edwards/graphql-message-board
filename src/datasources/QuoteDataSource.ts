@@ -8,7 +8,12 @@ const wait = (seconds: number) =>
 
 export default class QuoteDataSource extends DataSource {
   async getQuotes() {
-    await wait(3);
+    await wait(1);
     return quotes;
+  }
+
+  async getQuotesWithCategory(category: string) {
+    await wait(1);
+    return quotes.filter(quote => category === quote.category);
   }
 }
