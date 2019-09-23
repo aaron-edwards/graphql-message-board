@@ -13,5 +13,13 @@ export default {
     submittedBy: (quote: { userId: number }, _args: {}, { dataSources }: { dataSources: DataSources }) => {
       return dataSources.user.getUser(quote.userId);
     }
+  },
+  Mutation: {
+    createQuote: (
+      _root: {}, 
+      { input }: { input: { text: string, category: string, userId: number }}, 
+      { dataSources }: { dataSources: DataSources }) => {
+        return dataSources.quote.create(input.text, input.category, input.userId);
+    }
   }
 };

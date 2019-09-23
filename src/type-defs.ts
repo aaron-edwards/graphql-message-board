@@ -11,7 +11,7 @@ export default gql`
   type Quote {
     id: Int!
     text: String!
-    submittedBy: User!
+    submittedBy: User
     category: Category!
   }
   type User {
@@ -21,5 +21,14 @@ export default gql`
 
   type Query {
     quotes(category: Category): [Quote!]!
+  }
+  
+  input CreateQuoteInput {
+    text: String!
+    category: Category!
+    userId: Int!
+  }
+  type Mutation {
+    createQuote(input: CreateQuoteInput): Quote!
   }
 `;

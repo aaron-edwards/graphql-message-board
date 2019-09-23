@@ -8,9 +8,12 @@ export default class UserDataSource extends RESTDataSource {
   getUser(id: number) {
     return this.get(`/users/${id}`)
   }
-
+  
   protected async didReceiveResponse(response: Response, request: Request) {
     console.log(`Response From ${response.url} ${response.status}`);
+    if (response.status === 404) {
+      return undefined;
+    }
     return super.didReceiveResponse(response, request);
   }
 
