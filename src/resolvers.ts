@@ -1,12 +1,9 @@
-const quote = {
-  id: 1,
-  text: 'Some Text',
-  userId: 1,
-  category: 'LL',
-};
+import { DataSources } from './datasources';
 
 export default {
   Query: {
-    quotes: () => [quote],
+    quotes: (_root: {}, _args: {}, { dataSources }: { dataSources: DataSources }) => {
+      return dataSources.quote.getQuotes();
+    },
   },
 };
